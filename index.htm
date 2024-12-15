@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioBiz</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fc;
+        }
+
+        header {
+            background-color: #a2cbe7;
+            color: white;
+            padding: 5px 0;
+            font-size: medium;
+        }
+
+        .navbar {
+            font-weight: bold;
+        }
+
+        .hero-text {
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            margin: 20px 0;
+        }
+
+        .btn-custom {
+            background-color: #a2cbe7;
+            color: rgb(255, 255, 255);
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+        }
+
+        .service-cards .card-title {
+            transition: transform 0.5s ease;
+        }
+
+        .service-cards .card-title:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-item img {
+            max-height: 500px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 1.1rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 767px) {
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .hero-text p {
+                font-size: 1rem;
+            }
+        }
+        .logo{
+            max-width: 100%;
+            height: 80px;
+        }
+        
+        .nav-link:hover{
+            color: rgb(255, 255, 255);
+        }
+        #video{
+            height: auto;
+            width: 100%;
+            padding-bottom: 50px;
+            padding-top: 50px;
+        }
+    
+
+        .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(82, 78, 78);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Vertical Auto-Scrolling */
+.vertical-marquee {
+    height: 450px; /* Adjust based on your needs */
+    overflow: hidden;
+    position: relative;
+    background-color: #f4f7fc;
+    box-sizing: border-box;
+    width: 500px;
+    padding-left: 10px;
+    z-index: 1;
+}
+
+.marquee-content {
+    position: absolute;
+    top: 100%;
+    animation: vertical-marquee 15s linear infinite;
+}
+
+.vertical-marquee a {
+    margin: 0;
+    height: 100px; /* Same as the container height */
+    line-height: 40px; /* Center the text vertically */
+}
+
+@keyframes vertical-marquee {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: -100%; /* Adjust based on the number of lines */
+    }
+}
+
+/* Pause on Hover */
+.marquee:hover a, 
+.vertical-marquee:hover 
+.marquee-content {
+    animation-play-state: paused;
+}
+a{
+    color: rgb(44, 41, 41);
+    text-decoration: none;"
+}
+a:hover{
+    color: slateblue;
+}
+
+.div1 {
+  font-size: 14px;
+  transition-property: font-size;
+  transition-duration: 4s;
+  transition-delay: 2s;
+  text-align: center;
+  padding: 10px;
+  padding-top: 10px;
+}
+
+.div1:hover {
+  font-size: 20px;
+}
+
+
+#myDIV {
+  width: 100px;
+  height: 100px;
+  background-color: coral;
+  color: white;
+  animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+  50% {box-shadow: 10px 20px 30px blue;}
+}
+#myDIV h1{
+    padding-top: 20px;
+    font-size: large;
+    text-align: center;
+}
+.mydiv{
+    color: white;
+}
+    </style>
+</head>
+<body>
+
+<!-- Header Section with Navigation -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+        
+            <a href="index.htm"><img src="./logo.png" alt="logo" class="logo"></a>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="https://biobiz.in/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://biobiz.in/about/">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://biobiz.in/category/updates/">India Updates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://biobiz.in/s/opp/">Opportunities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://biobiz.in/s/consulting">BioBiz Consulting</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://biobiz.in/category/innovation-insights/">Innovation Insights</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link" href="#inshights">Insights</a>
+                        <div class="dropdown-content">
+                            <a href="https://biobiz.in/s/energy">Bioenergy</a>
+                            <a href="https://biobiz.in/s/env">Environmental Solutions</a>
+                            <a href="https://biobiz.in/s/vap">Bio Products</a>
+                            <a href="https://biobiz.in/s/st">Bio-based sciencce & Tech Pathways</a>
+                            <a href="https://biobiz.in/s/bring/in/reg">Regional Biomass Residues</a>
+                            <a href="https://biobiz.in/s/bring/in/">India Biomass Residues</a>
+                            <a href="https://biobiz.in/s/ref/bioeconomy">Indian Bioeconomy</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://biobiz.in/s/bring">BRING</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://biobiz.in/contact/">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section id="home" class="hero-text">
+    <div class="container-fluid">
+        <h1>Welcome to BioBiz  Energy Alternatives India (EAI)</h1>
+        <p>At BioBiz, we are keen to capitalize on India’s rich biodiversity and the availability of large amounts of biomass residues to develop a sustainable bio-economy and attractive business opportunities for diverse stakeholders – farmers, rural stakeholders, end-use industries, entrepreneurs / startups, and financial investors.</p>
+        
+        <div class="container-fluid">
+            <mediaelementwrapper id="">
+            <video loop="loop" autoplay="" playsinline="" muted="" id="video" preload="none" src="./video.mp4" >
+				<source type="video/mp4" src="./video.mp4">
+				
+			</video></mediaelementwrapper>
+            </div>
+        <div class="d-flex justify-content-center mb-4">
+            <input type="text" class="form-control w-50" id="searchField" placeholder="Search our services...">
+            <button class="btn btn-custom ms-2">Search</button>
+        </div>
+        <a href="#services" class="btn btn-custom">Explore Services</a>
+    </div>
+</section>
+
+<!-- Carousel Section -->
+<section id="carousel" class="container py-5">
+    <h2 class="text-center mb-5">Our Amazing Products</h2>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./Top·Max-Family-EU.webp" class="d-block w-100" alt="Project 1" style="opacity: 0.7;">
+                <div class="carousel-caption d-none d-md-block" style="color: black;">
+                    <h5>BioBizz Top-Max - Soilscape Solution</h5>
+                    <p>This is 100% organic flowering stimulator.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./Light_Mix-Family-EU-removebg-preview.png" class="d-block w-100" alt="Project 2" style="opacity: 0.7;">
+                <div class="carousel-caption d-none d-md-block" style="color: black;">
+                    <h5>Light·Mix - Biobizz</h5>
+                    <p>A base substrate for a personalized grow.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./bio-grow-5l-_-1l_-bio-bloom-5l-_-1l_1-removebg-preview.png" class="d-block w-100" alt="Project 3" style="opacity: 0.7;">
+                <div class="carousel-caption d-none d-md-block" style="color: black;">
+                    <h5>Biobizz Grow & Biobizz Bloom</h5>
+                    <p>Nourishes beneficial bacterial flora in media.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+<section id="Vertical-scroll" class="container py-5" style="display: flex; justify-content: space-between; position: relative; left: 100px;">
+
+<div class="containerScrolling">
+    <h1>India Updates</h1>
+    <div class="vertical-marquee">
+        <div class="marquee-content">
+            <a href="https://biobiz.in/2024/12/green-hydrogen-tkil-partners-with-sohhytec/" >Green Hydrogen: TKIL Partners with Sohhytec.</a><br>
+            <a href="https://biobiz.in/2024/12/biobutanol-production-godavari-biorefineries-partners-with-catalyxx/" >Biobutanol Production: Godavari Biorefineries Partners with Catalyxx.</a><br>
+            <a href="https://biobiz.in/2024/12/compressed-biogas-plants-using-cow-dung-in-uttar-pradesh/" >Compressed Biogas Plants Using Cow Dung in Uttar Pradesh.</a><br>
+            <a href="https://biobiz.in/2024/12/steelmaking-with-green-hydrogen-sail-and-john-cockerill-india-collaborate/" >Steelmaking with Green Hydrogen: SAIL and John Cockerill India Collaborate.</a><br>
+            <a href="https://biobiz.in/2024/11/sustainable-aviation-fuel-facility-bpcl-to-launch-indias-first-by-2027/" >Sustainable Aviation Fuel Facility: BPCL to Launch India’s First by 2027.</a><br>
+            <a href="https://biobiz.in/2024/11/green-hydrogen-solutions-nhpc-partners-with-gggi/" >Green Hydrogen Solutions: NHPC Partners with GGGI.</a><br>
+            <a href="https://biobiz.in/2024/11/amara-raja-infra-builds-indias-first-green-hydrogen-fuel-station-in-leh/" >India’s First Green Hydrogen Fuel Station Built by Amara Raja Infra in Leh.</a><br>
+            <a href="https://biobiz.in/2024/11/waste-disposal-plant-in-rudrapur-to-generate-biogas/" >Waste Disposal Plant in Rudrapur to Generate Biogas.</a><br>
+        </div>
+    </div>
+
+</div>
+<div class="container-fluid">
+    <mediaelementwrapper id="">
+    <video loop="loop" autoplay="" playsinline="" muted="" id="video1" preload="none" src="./biobiz-mobile-video.mp4" style="height: 500px; width: 500px;">
+        <source type="video/mp4" src="./biobiz-mobile-video.mp4">
+        
+    </video></mediaelementwrapper>
+    </div>
+</section>
+<!-- Main Section -->
+<section id="services" class="container-fluid">
+    <h2 class="text-center mb-5">Main Section</h2>
+    <div class="row service-cards">
+        <div class="col-sm-1" style="display: flex; justify-content: space-around; margin: auto;">
+                <div>
+                    <h4 class="card-title" style="text-align: center; font-size: 25px; font-size: medium; padding: 5px;">
+                        <span>
+                            <a href="https://biobiz.in/s/opp/"><img src="./opportunity.png" class="card-img-top" alt="Opportunities">
+                            </a>Opportunities
+                        </span></h4>
+                </div>
+        </div>
+        <div class="col-sm-1"style="display: flex; justify-content: space-around; margin: auto;">
+            <div>
+                <h4 class="card-title" style="text-align: center; font-size: 25px; font-size: medium; padding: 10px;">
+                    <span>
+                        <a href="https://biobiz.in/s/consulting"><img src="./consulting.png" class="card-img-top" alt="Consulting"></a>Consulting    
+                    </span></h4>
+            </div>
+    </div>
+    <div class="col-sm-1"style="display: flex; justify-content: space-around; margin: auto;">
+            <div>
+                <h4 class="card-title" style="text-align: center; font-size: 25px; font-size: medium; padding: 10px;">
+                     <span>
+                        <a href="https://biobiz.in/insights/"><img src="./insights.png" class="card-img-top" alt="Insights"></a>Insights
+                    </span>
+                </h4>
+            </div>
+        </div>
+
+        <div class="col-sm-1"style="display: flex; justify-content: space-around; margin: auto;">
+            <div>
+                <h4 class="card-title" style="text-align: center; font-size: 25px; font-size: medium; padding: 10px;">
+                    <span>
+                        <a href="https://biobiz.in/category/innovation-insights/"><img src="./innovations.png" class="card-img-top" alt="innovation"></a>Innovations  
+                    </span></h4>
+            </div>
+    </div>
+
+    <div class="col-sm-1"style="display: flex; justify-content: space-around; margin: auto;">
+        <div>
+            <h4 class="card-title" style="text-align: center; font-size: 25px; font-size: medium; padding: 10px;">
+                <span>
+                    <a href="https://biobiz.in/s/bring"><img src="./leaf.png" class="card-img-top" alt="Biomass Residue Intelligence"></a>Biomass Residue Intelligence   
+                </span></h4>
+        </div>
+</div>
+    </div>
+</section>
+
+<!-- Other section -->
+
+<section id="services" class="container">
+    <h2 class="text-center mb-5" style="margin-top: 100px; margin-bottom: 100px;">Other Section</h2>
+    <div class="row" id="horizontal-marquee">
+        <div class="col-mid-1" id="marquee-content"  style="display: flex; justify-content: space-evenly;">
+            <div id="myDIV">
+                <a href="https://biobiz.in/category/updates/" class="mydiv"><h1>India Updates</h1></a>
+              </div>
+              <div id="myDIV">
+                <a href="https://biobiz.in/s/weekly" class="mydiv"><h1>Weekly Updates</h1></a>
+              </div>
+              <div id="myDIV">
+                <a href="https://biobiz.in/s/bring" class="mydiv"><h1>BRING</h1></a>
+              </div>
+              <div id="myDIV">
+                <a href="https://biobiz.in/s/bring/in/" class="mydiv"><h1>India Biomas Residues</h1></a>
+              </div>
+        </div>
+    </div>
+
+
+   
+        
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="bg-light py-5">
+    <div class="container" style="margin-top: 100px;">
+        <h2 class="text-center mb-5">Contact Us</h2>
+        <form>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-custom" onclick="validation()">Send Message</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <p>&copy; Copyright © 2024 BioBiz. All rights reserved.</p>
+    <div class="container">
+    <a style="color: rgb(223, 201, 201); margin-right: 7px;" href="https://api.whatsapp.com/send?text=BioBiz%20-%20Accelerating%20India%E2%80%99s%20Sustainability%20through%20Biomass%20https%3A%2F%2Fbiobiz.in%2F"><i class="fa fa-whatsapp" style="font-size:30px"></i></a>
+    <a style="color: rgb(223, 201, 201); margin-right: 7px;" href="https://www.addtoany.com/add_to/linkedin?linkurl=https%3A%2F%2Fbiobiz.in%2F&linkname=BioBiz%20-%20Accelerating%20India%E2%80%99s%20Sustainability%20through%20Biomass&linknote="><i class="fa fa-linkedin" style="font-size:30px"></i></a>
+    <a style="color: rgb(223, 201, 201); margin-right: 7px;" href="https://telegram.me/share/url?url=https%3A%2F%2Fbiobiz.in%2F&text=BioBiz%20-%20Accelerating%20India%E2%80%99s%20Sustainability%20through%20Biomass"><i class="fa fa-telegram" style="font-size:30px"></i></a>
+    <a style="color: rgb(223, 201, 201); margin-right: 7px;" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbiobiz.in%2F&t=BioBiz%20-%20Accelerating%20India%E2%80%99s%20Sustainability%20through%20Biomass&quote="><i class="fa fa-facebook-f" style="font-size:30px"></i></a>
+    <a style="color: rgb(223, 201, 201);" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fbiobiz.in%2F&linkname=BioBiz%20-%20Accelerating%20India%E2%80%99s%20Sustainability%20through%20Biomass&linknote="><i class="fa fa-envelope" style="font-size:30px"></i></a>
+    </div>
+</footer>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+<script>
+
+    function validation(){
+        let name=document.getElementById("name").value;
+        let email=document.getElementById("email").value;
+        let message=document.getElementById("message").value;
+        if(name!="" && email!="" && message!=""){
+                alert("Massage Submited Successfully");
+        }else{
+            alert("Please Fill the Name Email & Message !");
+        }
+    }
+</script>
+</html>
